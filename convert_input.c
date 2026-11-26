@@ -6,7 +6,7 @@
 /*   By: vfleskes <viktor@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/26 12:28:49 by vfleskes          #+#    #+#             */
-/*   Updated: 2026/11/26 17:14:13 by vfleskes         ###   ########.fr       */
+/*   Updated: 2026/11/26 18:51:48 by vfleskes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,8 @@ static int	add_num(char *str, t_node **a)
 			while (str[i] == '-' || str[i] == '+'
 				|| (str[i] >= '0' && str[i] <= '9'))
 				i++;
+			while (str[i] == ' ')
+				i++;
 		}
 		else
 			return (1);
@@ -87,21 +89,28 @@ static int	ft_strcmp(const char *s1, const char *s2)
 	return (0);
 }
 
-static int	check_arg(char *str)
+static int	check_arg(char **str)
 {
-	if (ft_strcmp(str, "--simple") == 0)
-		return (1);
-	else if (ft_strcmp(str, "--medium") == 0)
-		return (2);
-	else if (ft_strcmp(str, "--complex") == 0)
-		return (3);
-	else if (ft_strcmp(str, "--adaptive") == 0)
-		return (4);
-	else if (ft_strcmp(str, "--bench") == 0)
-		return (5);
+	int	num;
+	int	i;
+
+	num = 0;
+	i = 1;
+	if (ft_strcmp(str[i], "--bench") == 0)
+	{
+		num = 10;
+		i++;
+	}
+	if (ft_strcmp(str[i], "--simple") == 0)
+		return (num + 1);
+	else if (ft_strcmp(str[i], "--medium") == 0)
+		return (num + 2);
+	else if (ft_strcmp(str[i], "--complex") == 0)
+		return (num + 3);
+	else if (ft_strcmp(str[i], "--adaptive") == 0)
+		return (num + 4);
 	else
-		return (6);
-	return (0);
+		return (num + 5);
 }
 
 int	main(int ac, char **av)
@@ -113,18 +122,17 @@ int	main(int ac, char **av)
 
 	a = NULL;
 	b = NULL;
-	i = 1;
+	i = 0;
 	if (ac > 1)
 	{
-		num = check_arg(av[i]);
-		if (num < 6)
+		num = check_arg(av);
+		if (num != 5)
 			i++;
-		while (i < ac)
-		{
+		if (num >= 11 && num <= 14)
+			i++;
+		while (i++ < ac - 1)
 			if (add_num(av[i], &a) == 1)
 				return (write(2, "Error\n", 6), 1);
-			i++;
-		}
 		assign_index(a);
 		if (check_doubles(&a) == 1)
 			return (ft_lstclear(&a), write(2, "Error\n", 6), 1);

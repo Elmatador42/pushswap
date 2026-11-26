@@ -6,7 +6,7 @@
 /*   By: vfleskes <viktor@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/26 16:35:11 by vfleskes          #+#    #+#             */
-/*   Updated: 2026/11/26 17:13:37 by vfleskes         ###   ########.fr       */
+/*   Updated: 2026/11/26 18:29:10 by vfleskes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,13 +42,20 @@ void	chose_algo(int num, t_node **a, t_node **b)
 		sort_medium(a, b);
 	else if (num == 3)
 		sort_complex(a, b);
-	else if (num == 5)
-		bench(a, b);
-	else
+	else if (num == 4 || num == 5)
 		sort_adaptive(a, b);
+	else
+		add_bench(a, b, num);
 }
 
-void	bench(t_node **a, t_node **b)
+void	add_bench(t_node **a, t_node **b, int num)
 {
-	sort_adaptive(a, b);
+	if (num == 11)
+		sort_simple(a, b);
+	else if (num == 12)
+		sort_medium(a, b);
+	else if (num == 13)
+		sort_complex(a, b);
+	else
+		sort_adaptive(a, b);
 }

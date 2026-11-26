@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vfleskes <viktor@student.42.fr>            +#+  +:+       +#+        */
+/*   By: arngomes <arngomes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/22 09:10:53 by arngomes          #+#    #+#             */
-/*   Updated: 2026/11/26 16:52:15 by vfleskes         ###   ########.fr       */
+/*   Updated: 2026/11/26 18:27:51 by vfleskes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void		sort_small(t_node **a, t_node **b);
 void		sort_medium(t_node **a, t_node **b);
 void		sort_complex(t_node **a, t_node **b);
 const char	*sort_adaptive(t_node **a, t_node **b);
-void		bench(t_node **a, t_node **b);
+void		add_bench(t_node **a, t_node **b, int num);
 
 /* disorder */
 double		compute_disorder(t_node *a);
