@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arngomes <arngomes@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vfleskes <viktor@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/22 09:10:53 by arngomes          #+#    #+#             */
-/*   Updated: 2026/11/25 14:08:08 by arngomes         ###   ########.fr       */
+/*   Updated: 2026/11/26 16:52:15 by vfleskes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ void		sort_small(t_node **a, t_node **b);
 void		sort_medium(t_node **a, t_node **b);
 void		sort_complex(t_node **a, t_node **b);
 const char	*sort_adaptive(t_node **a, t_node **b);
+void		bench(t_node **a, t_node **b);
 
 /* disorder */
 double		compute_disorder(t_node *a);
@@ -53,6 +54,8 @@ void		assign_index(t_node *a);
 int			ft_isqrt(int n);
 int			find_index_pos(t_node *s, int index);
 int			is_sorted(t_node *stack);
+int			check_doubles(t_node **a);
+void		chose_algo(int num, t_node **a, t_node **b);
 
 /* node operations */
 void		ft_lstadd_back(t_node **lst, t_node *new);
