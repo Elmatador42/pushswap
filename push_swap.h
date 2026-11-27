@@ -72,6 +72,7 @@ int					is_sorted(t_node *stack);
 int					check_doubles(t_node **a);
 int					chose_algo(int num, t_node **a, t_node **b);
 int					is_sep(char *str);
+int					is_blank(char *str);
 
 void				ft_lstadd_back(t_node **lst, t_node *new);
 t_node				*ft_lstnew(int num);

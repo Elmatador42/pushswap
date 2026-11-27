@@ -17,6 +17,11 @@ const char	*sort_adaptive(t_node **a, t_node **b)
 	double	disorder;
 
 	disorder = compute_disorder(*a);
+	if (stack_size(*a) <= 5)
+	{
+		sort_small(a, b);
+		return ("O(n^2)");
+	}
 	if (disorder < 0.2)
 	{
 		sort_simple(a, b);

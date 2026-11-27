@@ -85,3 +85,13 @@ int	is_sep(char *str)
 		return (1);
 	return (0);
 }
+
+int	is_blank(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
+		i++;
+	return (str[i] == '\0');
+}

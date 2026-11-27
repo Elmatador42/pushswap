@@ -31,6 +31,8 @@ static long long	ft_atoi(const char *nptr)
 	{
 		res = res * 10;
 		res = res + (nptr[i] - '0');
+		if (res > (long long)INT_MAX + 1)
+			return (res * sign);
 		i++;
 	}
 	return (res * sign);
@@ -60,8 +62,8 @@ static int	add_num(char *str, t_node **a)
 		if (!(str[i] == ' ' || str[i] == '\0' || (str[i] >= 9 && str[i] <= 13)))
 			return (ft_lstclear(a), 1);
 	}
-	if (!(*a))
-		return (1);
+	if (is_blank(str))
+		return (ft_lstclear(a), 1);
 	return (0);
 }
 
@@ -137,5 +139,5 @@ int	main(int ac, char **av)
 		if (chose_algo(num, &a, &b) == 1)
 			return (1);
 	}
-	return (0);
+	return (ft_lstclear(&a), ft_lstclear(&b), 0);
 }
