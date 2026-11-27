@@ -3,16 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   sort_operations2.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vfleskes <viktor@student.42.fr>            +#+  +:+       +#+        */
+/*   By: arngomes <arngomes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/24 13:11:22 by vfleskes          #+#    #+#             */
-/*   Updated: 2026/11/25 22:17:18 by vfleskes         ###   ########.fr       */
+/*   Updated: 2026/11/27 13:31:43 by arngomes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/*Met le premier numero de a dans b*/
 void	pb(t_node **a, t_node **b)
 {
 	t_node	*node;
@@ -26,7 +25,6 @@ void	pb(t_node **a, t_node **b)
 	write(1, "pb\n", 3);
 }
 
-/*Le premier argument deviens le dernier*/
 static	int	rotate(t_node **stack)
 {
 	t_node	*first;

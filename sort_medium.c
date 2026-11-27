@@ -6,13 +6,12 @@
 /*   By: arngomes <arngomes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/23 14:56:32 by arngomes          #+#    #+#             */
-/*   Updated: 2026/11/26 16:08:42 by arngomes         ###   ########.fr       */
+/*   Updated: 2026/11/27 13:31:32 by arngomes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/* taille du chunk environ 1.5 * sqrt(n), ca donne 15 pour 100 et 33 pour 500 */
 static int	chunk_size(int n)
 {
 	int	chunk;
@@ -23,11 +22,6 @@ static int	chunk_size(int n)
 	return (chunk);
 }
 
-/*
-** etape 1, on envoie dans b tout ce qui a un index entre 0 et pushed + chunk
-** les plus petits (index <= pushed) on les met en bas de b avec rb
-** les autres on les laisse en haut, comme ca b est quasi trie
-*/
 static void	push_chunks(t_node **a, t_node **b, int chunk)
 {
 	int	pushed;
@@ -52,10 +46,6 @@ static void	push_chunks(t_node **a, t_node **b, int chunk)
 	}
 }
 
-/*
-** etape 2, on remonte le plus grand de b avec rb ou rrb selon le plus court
-** puis on fait pa, a se remplit dans l'ordre en partant du plus grand
-*/
 static void	push_back(t_node **a, t_node **b)
 {
 	int	size;

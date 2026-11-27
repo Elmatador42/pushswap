@@ -3,16 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   sort_operations3.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vfleskes <viktor@student.42.fr>            +#+  +:+       +#+        */
+/*   By: arngomes <arngomes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/24 15:41:38 by vfleskes          #+#    #+#             */
-/*   Updated: 2026/11/25 22:17:13 by vfleskes         ###   ########.fr       */
+/*   Updated: 2026/11/27 13:31:46 by arngomes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/*Le dernier argument deviens le premier*/
 static int	reverse_rotate(t_node **stack)
 {
 	t_node	*last;
