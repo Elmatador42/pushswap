@@ -57,15 +57,16 @@ static int	add_num(char *str, t_node **a)
 			if (newnode == NULL)
 				return (ft_lstclear(a), 1);
 			ft_lstadd_back(a, newnode);
-			while (str[i] == '-' || str[i] == '+'
-				|| (str[i] >= '0' && str[i] <= '9'))
+			if (str[i] == '-' || str[i] == '+')
 				i++;
-			while (str[i] == ' ')
+			while (str[i] >= '0' && str[i] <= '9')
 				i++;
 		}
-		else
-			return (1);
+		if (!(str[i] == ' ' || str[i] == '\0' || (str[i] >= 9 && str[i] <= 13)))
+			return (ft_lstclear(a), 1);
 	}
+	if (!(*a))
+		return (1);
 	return (0);
 }
 
@@ -136,7 +137,8 @@ int	main(int ac, char **av)
 		assign_index(a);
 		if (check_doubles(&a) == 1)
 			return (ft_lstclear(&a), write(2, "Error\n", 6), 1);
-		chose_algo(num, &a, &b);
+		if (chose_algo(num, &a, &b) == 1)
+			return (1);
 	}
 	return (0);
 }

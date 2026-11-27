@@ -55,7 +55,7 @@ int			ft_isqrt(int n);
 int			find_index_pos(t_node *s, int index);
 int			is_sorted(t_node *stack);
 int			check_doubles(t_node **a);
-void		chose_algo(int num, t_node **a, t_node **b);
+int			chose_algo(int num, t_node **a, t_node **b);
 
 /* node operations */
 void		ft_lstadd_back(t_node **lst, t_node *new);

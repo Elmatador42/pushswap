@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <push_swap.h>
+#include "push_swap.h"
 
 /*Finds all numbers index, rotates until the smallest number is at the front
 and puts the number into b*/
