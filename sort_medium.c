@@ -77,6 +77,8 @@ void	sort_medium(t_node **a, t_node **b)
 	n = stack_size(*a);
 	if (n < 2 || compute_disorder(*a) == 0.0)
 		return ;
+	if (n == 2)
+		return (sa(a));
 	push_chunks(a, b, chunk_size(n));
 	push_back(a, b);
 }

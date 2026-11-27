@@ -67,50 +67,6 @@ static int	add_num(char *str, t_node **a)
 	return (0);
 }
 
-static int	ft_strcmp(const char *s1, const char *s2)
-{
-	int				i;
-	unsigned char	*str1;
-	unsigned char	*str2;
-
-	str1 = (unsigned char *) s1;
-	str2 = (unsigned char *) s2;
-	i = 0;
-	while ((str1[i] != '\0' || str2[i] != '\0'))
-	{
-		if (str1[i] != str2[i])
-			return (str1[i] - str2[i]);
-		i++;
-	}
-	return (0);
-}
-
-static int	check_arg(char **str)
-{
-	int	num;
-	int	i;
-
-	num = 0;
-	i = 1;
-	if (ft_strcmp(str[i], "--bench") == 0)
-	{
-		num = 10;
-		i++;
-	}
-	if (!str[i])
-		return (num + 5);
-	if (ft_strcmp(str[i], "--simple") == 0)
-		return (num + 1);
-	else if (ft_strcmp(str[i], "--medium") == 0)
-		return (num + 2);
-	else if (ft_strcmp(str[i], "--complex") == 0)
-		return (num + 3);
-	else if (ft_strcmp(str[i], "--adaptive") == 0)
-		return (num + 4);
-	else
-		return (num + 5);
-}
-
 int	main(int ac, char **av)
 {
 	t_node	*a;
@@ -120,17 +76,17 @@ int	main(int ac, char **av)
 
 	a = NULL;
 	b = NULL;
-	i = 0;
+	i = 1;
 	if (ac > 1)
 	{
-		num = check_arg(av);
-		if (num != 5)
-			i++;
-		if (num >= 11 && num <= 14)
-			i++;
-		while (i++ < ac - 1)
-			if (add_num(av[i], &a) == 1)
+		num = parse_flags(av, &i);
+		if (num < 0)
+			return (write(2, "Error\n", 6), 1);
+		while (i < ac)
+			if (add_num(av[i++], &a) == 1)
 				return (write(2, "Error\n", 6), 1);
+		if (!a)
+			return (0);
 		assign_index(a);
 		if (check_doubles(&a) == 1)
 			return (ft_lstclear(&a), write(2, "Error\n", 6), 1);

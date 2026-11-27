@@ -40,6 +40,37 @@ typedef enum e_op
 	OP_COUNT
 }					t_op;
 
+typedef struct s_move
+{
+	int				ca;
+	int				cb;
+	int				total;
+}					t_move;
+
+typedef enum e_loc
+{
+	TOP_A,
+	BOT_A,
+	TOP_B,
+	BOT_B
+}					t_loc;
+
+typedef struct s_chunk
+{
+	t_loc			loc;
+	int				lo;
+	int				size;
+}					t_chunk;
+
+typedef struct s_low
+{
+	int				*pos;
+	int				*next;
+	int				n;
+	int				size_a;
+	int				size_b;
+}					t_low;
+
 void				bench_count(t_op op);
 void				bench_print(double disorder, const char *strategy);
 
@@ -59,6 +90,14 @@ void				sort_simple(t_node **a, t_node **b);
 void				sort_small(t_node **a, t_node **b);
 void				sort_medium(t_node **a, t_node **b);
 void				sort_complex(t_node **a, t_node **b);
+int					chunk_value(t_node *a, t_node *b, t_loc loc);
+void				chunk_move(t_node **a, t_node **b, t_loc from, t_loc to);
+void				chunk_base(t_node **a, t_node **b, t_chunk c);
+void				sort_low(t_node **a, t_node **b);
+int					mark_lis(t_node *a, int n, int *keep);
+int					*alloc_zero(int n);
+void				low_refresh(t_node *a, t_low *ctx);
+t_move				low_cheapest(t_node *b, t_low *ctx);
 const char			*sort_adaptive(t_node **a, t_node **b);
 void				add_bench(t_node **a, t_node **b, int num);
 
@@ -71,6 +110,7 @@ int					find_index_pos(t_node *s, int index);
 int					is_sorted(t_node *stack);
 int					check_doubles(t_node **a);
 int					chose_algo(int num, t_node **a, t_node **b);
+int					parse_flags(char **av, int *i);
 int					is_sep(char *str);
 int					is_blank(char *str);
 

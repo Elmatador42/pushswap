@@ -22,6 +22,8 @@ void	sort_simple(t_node **a, t_node **b)
 	index = 0;
 	if (is_sorted(*a))
 		return ;
+	if (size == 2)
+		return (sa(a));
 	while (size > 0)
 	{
 		pos = find_index_pos(*a, index);
