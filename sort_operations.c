@@ -6,7 +6,7 @@
 /*   By: arngomes <arngomes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/24 12:34:28 by vfleskes          #+#    #+#             */
-/*   Updated: 2026/11/27 13:31:37 by arngomes         ###   ########.fr       */
+/*   Updated: 2026/11/27 15:32:41 by arngomes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,6 @@ void	ss(t_node **a, t_node **b)
 	}
 }
 
-/*Met le premier numero de b dans a*/
 void	pa(t_node **a, t_node **b)
 {
 	t_node	*node;
