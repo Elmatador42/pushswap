@@ -34,8 +34,10 @@ int	check_doubles(t_node **a)
 	return (0);
 }
 
-void	chose_algo(int num, t_node **a, t_node **b)
+int	chose_algo(int num, t_node **a, t_node **b)
 {
+	if (!(*a))
+		return (write(2, "Error\n", 6), 1);
 	if (num == 1)
 		sort_simple(a, b);
 	else if (num == 2)
@@ -46,6 +48,7 @@ void	chose_algo(int num, t_node **a, t_node **b)
 		sort_adaptive(a, b);
 	else
 		add_bench(a, b, num);
+	return (0);
 }
 
 void	add_bench(t_node **a, t_node **b, int num)
