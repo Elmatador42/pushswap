@@ -23,6 +23,7 @@ void	pb(t_node **a, t_node **b)
 	node->next = *b;
 	*b = node;
 	write(1, "pb\n", 3);
+	bench_count(OP_PB);
 }
 
 static	int	rotate(t_node **stack)
@@ -45,13 +46,19 @@ static	int	rotate(t_node **stack)
 void	ra(t_node **a)
 {
 	if (rotate(a))
+	{
 		write(1, "ra\n", 3);
+		bench_count(OP_RA);
+	}
 }
 
 void	rb(t_node **b)
 {
 	if (rotate(b))
+	{
 		write(1, "rb\n", 3);
+		bench_count(OP_RB);
+	}
 }
 
 void	rr(t_node **a, t_node **b)
@@ -62,5 +69,8 @@ void	rr(t_node **a, t_node **b)
 	rotated_a = rotate(a);
 	rotated_b = rotate(b);
 	if (rotated_a || rotated_b)
+	{
 		write(1, "rr\n", 3);
+		bench_count(OP_RR);
+	}
 }

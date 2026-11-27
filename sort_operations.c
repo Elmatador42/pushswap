@@ -30,13 +30,19 @@ static int	swap_nodes(t_node **stack)
 void	sa(t_node **a)
 {
 	if (swap_nodes(a))
+	{
 		write(1, "sa\n", 3);
+		bench_count(OP_SA);
+	}
 }
 
 void	sb(t_node **b)
 {
 	if (swap_nodes(b))
+	{
 		write(1, "sb\n", 3);
+		bench_count(OP_SB);
+	}
 }
 
 void	ss(t_node **a, t_node **b)
@@ -47,7 +53,10 @@ void	ss(t_node **a, t_node **b)
 	swapped_a = swap_nodes(a);
 	swapped_b = swap_nodes(b);
 	if (swapped_a || swapped_b)
+	{
 		write(1, "ss\n", 3);
+		bench_count(OP_SS);
+	}
 }
 
 /*Met le premier numero de b dans a*/
@@ -62,4 +71,5 @@ void	pa(t_node **a, t_node **b)
 	node->next = *a;
 	*a = node;
 	write(1, "pa\n", 3);
+	bench_count(OP_PA);
 }

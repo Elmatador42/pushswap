@@ -97,6 +97,8 @@ static int	check_arg(char **str)
 		num = 10;
 		i++;
 	}
+	if (!str[i])
+		return (num + 5);
 	if (ft_strcmp(str[i], "--simple") == 0)
 		return (num + 1);
 	else if (ft_strcmp(str[i], "--medium") == 0)
