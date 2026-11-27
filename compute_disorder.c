@@ -6,18 +6,12 @@
 /*   By: arngomes <arngomes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/21 18:01:20 by arngomes          #+#    #+#             */
-/*   Updated: 2026/11/25 14:07:28 by arngomes         ###   ########.fr       */
+/*   Updated: 2026/11/27 13:30:57 by arngomes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/*
-** on regarde toutes les paires (i, j) avec i avant j dans la pile
-** si a[i] > a[j] c'est une erreur
-** disorder c'est le nombre d'erreurs divise par le nombre de paires
-** donc 0 si c'est deja trie et 1 si c'est trie a l'envers
-*/
 double	compute_disorder(t_node *a)
 {
 	t_node	*i;

@@ -3,16 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   sort_operations.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vfleskes <viktor@student.42.fr>            +#+  +:+       +#+        */
+/*   By: arngomes <arngomes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/24 12:34:28 by vfleskes          #+#    #+#             */
-/*   Updated: 2026/11/25 22:17:21 by vfleskes         ###   ########.fr       */
+/*   Updated: 2026/11/27 13:31:37 by arngomes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/*Change les premiere deux positions de la liste*/
 static int	swap_nodes(t_node **stack)
 {
 	t_node	*first;

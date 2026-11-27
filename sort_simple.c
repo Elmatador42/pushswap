@@ -3,17 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   sort_simple.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vfleskes <viktor@student.42.fr>            +#+  +:+       +#+        */
+/*   By: arngomes <arngomes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/25 10:38:49 by vfleskes          #+#    #+#             */
-/*   Updated: 2026/11/26 14:40:39 by vfleskes         ###   ########.fr       */
+/*   Updated: 2026/11/27 13:31:53 by arngomes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <push_swap.h>
 
-/*Finds all numbers index, rotates until the smallest number is at the front
-and puts the number into b*/
 void	sort_simple(t_node **a, t_node **b)
 {
 	int	size;

@@ -6,19 +6,12 @@
 /*   By: arngomes <arngomes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/24 12:26:29 by arngomes          #+#    #+#             */
-/*   Updated: 2026/11/25 14:07:08 by arngomes         ###   ########.fr       */
+/*   Updated: 2026/11/27 13:31:15 by arngomes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/*
-** on calcule le desordre avant de faire le moindre mouvement
-** en dessous de 0.2 on prend sort_simple en O(n^2)
-** en dessous de 0.5 on prend sort_medium en O(n sqrt n)
-** sinon on prend sort_complex en O(n log n)
-** on renvoie la complexite utilisee pour l'afficher avec --bench
-*/
 const char	*sort_adaptive(t_node **a, t_node **b)
 {
 	double	disorder;

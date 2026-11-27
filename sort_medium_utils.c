@@ -6,7 +6,7 @@
 /*   By: arngomes <arngomes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/25 10:09:36 by arngomes          #+#    #+#             */
-/*   Updated: 2026/11/25 14:06:51 by arngomes         ###   ########.fr       */
+/*   Updated: 2026/11/27 13:31:20 by arngomes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ int	stack_size(t_node *s)
 	return (n);
 }
 
-/* l'index c'est la position qu'aurait la valeur si la pile etait triee */
 void	assign_index(t_node *a)
 {
 	t_node	*cur;
