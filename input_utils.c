@@ -57,16 +57,16 @@ void	add_bench(t_node **a, t_node **b, int num)
 	const char	*strategy;
 
 	disorder = compute_disorder(*a);
-	strategy = "O(n log n)";
+	strategy = "Complex / O(n log n)";
 	if (num == 11)
 	{
 		sort_simple(a, b);
-		strategy = "O(n^2)";
+		strategy = "Simple / O(n^2)";
 	}
 	else if (num == 12)
 	{
 		sort_medium(a, b);
-		strategy = "O(n\xe2\x88\x9an)";
+		strategy = "Medium / O(n\xe2\x88\x9an)";
 	}
 	else if (num == 13)
 		sort_complex(a, b);

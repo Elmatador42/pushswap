@@ -20,18 +20,18 @@ const char	*sort_adaptive(t_node **a, t_node **b)
 	if (stack_size(*a) <= 5)
 	{
 		sort_small(a, b);
-		return ("O(n^2)");
+		return ("Adaptive / O(n^2)");
 	}
 	if (disorder < 0.2)
 	{
 		sort_simple(a, b);
-		return ("O(n^2)");
+		return ("Adaptive / O(n^2)");
 	}
 	if (disorder < 0.5)
 	{
 		sort_medium(a, b);
-		return ("O(n\xe2\x88\x9an)");
+		return ("Adaptive / O(n\xe2\x88\x9an)");
 	}
 	sort_complex(a, b);
-	return ("O(n log n)");
+	return ("Adaptive / O(n log n)");
 }
