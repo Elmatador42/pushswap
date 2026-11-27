@@ -38,22 +38,17 @@ static long long	ft_atoi(const char *nptr)
 
 static int	add_num(char *str, t_node **a)
 {
-	int			i;
-	long long	num;
-	t_node		*newnode;
-
-	i = 0;
+	int (i) = 0;
 	while (str[i])
 	{
 		while (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
 			i++;
-		if (((str[i] == '-' || str[i] == '+') && (str[i + 1] >= '0'
-					&& str[i + 1] <= '9')) || (str[i] >= '0' && str[i] <= '9'))
+		if (is_sep(&str[i]) == 1)
 		{
-			num = ft_atoi(&str[i]);
+			long long (num) = ft_atoi(&str[i]);
 			if (num > INT_MAX || num < INT_MIN)
 				return (ft_lstclear(a), 1);
-			newnode = ft_lstnew(num);
+			t_node (*newnode) = ft_lstnew(num);
 			if (newnode == NULL)
 				return (ft_lstclear(a), 1);
 			ft_lstadd_back(a, newnode);

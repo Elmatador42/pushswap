@@ -62,3 +62,14 @@ void	add_bench(t_node **a, t_node **b, int num)
 	else
 		sort_adaptive(a, b);
 }
+
+int	is_sep(char *str)
+{
+	int	i;
+
+	i = 0;
+	if (((str[i] == '-' || str[i] == '+') && (str[i + 1] >= '0'
+				&& str[i + 1] <= '9')) || (str[i] >= '0' && str[i] <= '9'))
+		return (1);
+	return (0);
+}
